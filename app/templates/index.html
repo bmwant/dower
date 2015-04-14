@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="ui centered page grid">
+    <div class="row">
+        <div class="column">
+          <h1 class="center aligned ui header">
+            Вас приветствует Dower
+          </h1>
+        </div>
+      </div>
+
+    <div class="row">
+        <div class="ten wide column">
+          <h3 class="ui header">How to Win Your Cats Attention</h3>
+          <p>Всё готово для дальнейшей разработки. Вы можете создать проекты по заранее подготовленным шаблонам,
+          использовать веб-интерфейсы для доступа к почте или базам данным или почитать <a href="#">руководство для начинающих</a>.
+          </p>
+          <p><strong>Остались вопросы?</strong> Для начала <a href="#">почитайте FAQ</a>, обратитесь к <a href="#">официальной документации</a>, а потом <a href="#">пишите
+          разработчику</a>.</p>
+
+        </div>
+        <div class="four wide column">
+            <div class="ui very relaxed divided link list">
+          <a class="item" href="/phptest">
+            <div class="left floated ui star rating">
+              <i class="icon"></i>
+            </div>
+            <div class="description">Проверка работы php</div>
+          </a>
+          <a class="active item" onclick="$('#mymodal').modal('show');">
+            <div class="left floated ui star rating">
+              <i class="icon"></i>
+            </div>
+            <div class="description">Проверка работы python</div>
+          </a>
+          <a class="item">
+            <div class="left floated ui star rating">
+              <i class="icon"></i>
+            </div>
+            <div class="description">Проверка отправки почты</div>
+          </a>
+
+        </div>
+        </div>
+      </div>
+
+
+
+<div class="fourteen wide column">
+    <div class="ui one column grid">
+        <div class="column">
+            <div class="ui teal dividing header">
+                <i class="settings icon"></i>
+
+                <div class="content">
+                    Создать проект
+                    <div class="sub header">Для быстрого старта используйте готовую структуру проекта для популярых фреймворков</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui five column grid">
+
+        <div class="column">
+            <div class="ui segment">
+                <img src="../static/tom.jpg" class="ui fluid image">
+            </div>
+        </div>
+        <div class="column">
+            <div class="ui segment">
+                <img src="../static/django-logo-negative.png" class="ui fluid image">
+            </div>
+        </div>
+        <div class="column">
+            <div class="ui segment">
+                <img src="../static/flask.png" class="ui fluid image">
+            </div>
+        </div>
+        <div class="column">
+            <div class="ui segment">
+                <img src="../static/tornado.png" class="ui fluid image">
+            </div>
+        </div>
+        <div class="column">
+            <div class="ui segment">
+                <img src="../static/tom.jpg" class="ui fluid image">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="ui one column grid">
+        <div class="column">
+            <div class="ui teal dividing header">
+                <i class="settings icon"></i>
+
+                <div class="content">
+                    Веб-панели
+                    <div class="sub header">Веб-клиенты для удобного управления/просмотра баз данных, а также отправленной почты</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui one column grid">
+        <div class="column">
+            <div class="ui five cards">
+                <div class="card">
+                    <div class="image">
+                        <img src="../static/tom.jpg">
+                    </div>
+                    <div class="extra">
+                        <a href="/mywebsql">
+                            <div class="ui fluid orange basic button">MyWebSql</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<div class="ui modal" id="mymodal">
+  <i class="close icon"></i>
+  <div class="header">
+    Modal Title
+  </div>
+  <div class="content">
+    <div class="image">
+      An image can appear on left or an icon
+    </div>
+    <div class="description">
+      A description can appear on the right
+    </div>
+  </div>
+  <div class="actions">
+    <div class="ui button">Cancel</div>
+    <div class="ui button">OK</div>
+  </div>
+</div>
+
+<div class="ui modal" id="mail">
+  <i class="close icon"></i>
+  <div class="header">
+    Проверка отправки почты
+  </div>
+  <div class="content">
+    <div class="image">
+      An image can appear on left or an icon
+    </div>
+    <div class="description">
+      A description can appear on the right
+    </div>
+  </div>
+  <div class="actions">
+    <div class="ui button">Cancel</div>
+    <div class="ui button">OK</div>
+  </div>
+</div>
+<script>
+    $('.ui.modal')
+  .modal()
+;
+</script>
+{% endblock %}
