@@ -3,22 +3,26 @@
 <div class="ui centered page grid">
     <div class="row">
         <div class="column">
-          <h1 class="center aligned ui header">
-            Вас приветствует Dower
-          </h1>
+            <h1 class="center aligned ui header" id="site-header">
+                Вас приветствует Dower
+            </h1>
         </div>
-      </div>
+    </div>
 
     <div class="row">
-        <div class="ten wide column">
-          <h3 class="ui header">How to Win Your Cats Attention</h3>
-          <p>Всё готово для дальнейшей разработки. Вы можете создать проекты по заранее подготовленным шаблонам,
-          использовать веб-интерфейсы для доступа к почте или базам данным или почитать <a href="#">руководство для начинающих</a>.
-          </p>
-          <p><strong>Остались вопросы?</strong> Для начала <a href="#">почитайте FAQ</a>, обратитесь к <a href="#">официальной документации</a>, а потом <a href="#">пишите
-          разработчику</a>.</p>
 
+        <div class="ten wide column">
+            <h3 class="ui header">Что дальше?</h3>
+
+            <p>Всё готово для дальнейшей разработки. Вы можете создавать проекты по заранее подготовленным шаблонам,
+                использовать веб-интерфейсы для доступа к почте или базам данным или прочесть <a href="#">руководство для начинающих</a>.
+            </p>
+
+            <p><strong>Остались вопросы?</strong> Для начала <a href="#">прочитайте FAQ</a>, обратитесь к <a href="#">официальной документации</a>,
+                а потом <a href="#">пишите разработчику</a>.
+            </p>
         </div>
+
         <div class="four wide column">
             <div class="ui very relaxed divided link list">
           <a class="item" href="/phptest">
@@ -27,13 +31,15 @@
             </div>
             <div class="description">Проверка работы php</div>
           </a>
-          <a class="active item" onclick="$('#mymodal').modal('show');">
+          <a class="active item" onclick="$('#createmodal').modal('show');">
             <div class="left floated ui star rating">
               <i class="icon"></i>
             </div>
             <div class="description">Проверка работы python</div>
           </a>
-          <a class="item">
+          <a class="item" onclick="$('#mailmodal').modal({
+               onApprove: function() {return false;},
+            }).modal('show');">
             <div class="left floated ui star rating">
               <i class="icon"></i>
             </div>
@@ -60,31 +66,31 @@
         </div>
     </div>
 
-    <div class="ui five column grid">
+    <div class="ui five column grid projects">
 
         <div class="column">
-            <div class="ui segment">
-                <img src="../static/tom.jpg" class="ui fluid image">
+            <div class="ui segment" data-type="python" data-title="Пустой Python-проект" data-content="Создает только папку и виртуальное окружение для будущего проекта.">
+                <img src="../static/python.png" class="ui fluid image">
             </div>
         </div>
         <div class="column">
-            <div class="ui segment">
-                <img src="../static/django-logo-negative.png" class="ui fluid image">
+            <div class="ui segment" data-type="django">
+                <img src="../static/django.png" class="ui fluid image">
             </div>
         </div>
         <div class="column">
-            <div class="ui segment">
+            <div class="ui segment" data-type="flask">
                 <img src="../static/flask.png" class="ui fluid image">
             </div>
         </div>
         <div class="column">
-            <div class="ui segment">
+            <div class="ui segment" data-type="tornado">
                 <img src="../static/tornado.png" class="ui fluid image">
             </div>
         </div>
         <div class="column">
-            <div class="ui segment">
-                <img src="../static/tom.jpg" class="ui fluid image">
+            <div class="ui segment" data-type="bottle" data-title="Bottle microframework" data-content="Add users to your feed. Short description. How long will it be.">
+                <img src="../static/bottle.png" class="ui fluid image">
             </div>
         </div>
 
@@ -106,6 +112,7 @@
     <div class="ui one column grid">
         <div class="column">
             <div class="ui five cards">
+
                 <div class="card">
                     <div class="image">
                         <img src="../static/tom.jpg">
@@ -116,6 +123,18 @@
                         </a>
                     </div>
                 </div>
+
+                <div class="card">
+                    <div class="image">
+                        <img src="../static/tom.jpg">
+                    </div>
+                    <div class="extra">
+                        <a href="/mail">
+                            <div class="ui fluid orange basic button">Some mail agent</div>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -123,46 +142,141 @@
 
 </div>
 
-<div class="ui modal" id="mymodal">
-  <i class="close icon"></i>
-  <div class="header">
-    Modal Title
-  </div>
-  <div class="content">
-    <div class="image">
-      An image can appear on left or an icon
+<div class="ui modal" id="pythonmodal">
+    <i class="close icon"></i>
+
+    <div class="header">
+        Modal Title
     </div>
-    <div class="description">
-      A description can appear on the right
+    <div class="content">
+        <div class="image">
+            An image can appear on left or an icon
+        </div>
+        <div class="description">
+            A description can appear on the right
+        </div>
     </div>
-  </div>
-  <div class="actions">
-    <div class="ui button">Cancel</div>
-    <div class="ui button">OK</div>
-  </div>
+    <div class="actions">
+        <div class="ui button cancel">Cancel</div>
+        <div class="ui button ok">OK</div>
+    </div>
 </div>
 
-<div class="ui modal" id="mail">
-  <i class="close icon"></i>
-  <div class="header">
-    Проверка отправки почты
-  </div>
-  <div class="content">
-    <div class="image">
-      An image can appear on left or an icon
+<div class="ui modal" id="createmodal">
+    <i class="close icon"></i>
+
+    <div class="header">
+        Создать новый проект
     </div>
-    <div class="description">
-      A description can appear on the right
+    <div class="content">
+        <div class="ui form">
+            <form>
+                <div class="field">
+                    <label>Введите название вашего проекта</label>
+                    <input placeholder="Кодовое имя" name="name" type="text">
+                </div>
+            </form>
+        </div>
     </div>
-  </div>
-  <div class="actions">
-    <div class="ui button">Cancel</div>
-    <div class="ui button">OK</div>
-  </div>
+    <div class="actions">
+        <div class="ui button cancel">Закрыть</div>
+        <div class="ui orange button ok" id="create-btn">Создать</div>
+    </div>
 </div>
+
+<div class="ui modal" id="mailmodal">
+    <i class="close icon"></i>
+
+    <div class="header">
+        Проверка отправки почты
+    </div>
+    <div class="content">
+        <div class="ui success message" id="sent-ok">
+            <div class="header">Готово</div>
+            <p>Письмо отправлено. Чтобы проверить входящие сообщения, закройте это окно и перейдите
+            в веб-панель почты.</p>
+        </div>
+        <div class="ui form segment">
+            <form>
+                <div class="two fields">
+                    <div class="field">
+                        <label>От кого</label>
+                        <input placeholder="Введите адрес отправителя" name="from" type="email" required>
+                    </div>
+                    <div class="field">
+                        <label>Кому</label>
+                        <input placeholder="Введите адрес получателя" name="to" type="email" required="">
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Тема письма</label>
+                    <input placeholder="Введите тему" name="subject" type="text">
+                </div>
+                <div class="field">
+                    <label>Текст</label>
+                    <textarea name="message"></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui button cancel">Закрыть</div>
+        <div class="ui orange button ok" id="send-mail-btn">Отправить</div>
+    </div>
+</div>
+
 <script>
-    $('.ui.modal')
-  .modal()
-;
+
+    $(document).ready(function() {
+        $('.ui.modal').modal({onApprove: function() {
+            return false;
+        }});
+
+        //$("#createmodal").modal('attach events', '.projects .ui.segment', 'show');
+
+        $(".projects .ui.segment").popup({
+            hoverable: true,
+            position : 'bottom center'
+        });
+        $(".projects .ui.segment").click(function() {
+            var modal = $("#createmodal");
+            var form = modal.find("form");
+            form.data("type", $(this).data("type")); //set project type to form data attribute
+            modal.modal("show");
+}       );
+
+        $("#send-mail-btn").click(function(event) {
+            event.preventDefault();
+            var modal = $(this).closest(".modal");
+            var form = modal.find(".form");
+            var formData = form.children("form");
+            form.addClass("loading");
+            $("#sent-ok").css("display", "none");
+            $.post("/sendmail", formData.serialize(), function(data) {
+                $("#sent-ok").css("display", "block");
+                form.removeClass("loading");
+                console.log(data);
+            });
+        });
+
+        $("#create-btn").click(function() {
+            var modal = $(this).closest(".modal");
+            var form = modal.find("form");
+            var formData = form.serialize() + "&type=" + form.data("type");
+            console.log(formData);
+            $.post("/create", formData, function(data) {
+                console.log(data);
+            });
+        });
+    });
+</script>
+
+<script>
+if (!!window.EventSource) {
+  var source = new EventSource('/');
+  source.onmessage = function(e) {
+    $("#data").text(e.data);
+  }
+}
 </script>
 {% endblock %}

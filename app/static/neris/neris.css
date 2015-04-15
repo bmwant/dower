@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'Neris';
+    src: url('neris-thin.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Neris';
+    src: url('neris-light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Neris';
+    src: url('neris-semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Neris';
+    src: url('neris-black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Neris';
+    src: url('neris-thinitalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Neris';
+    src: url('neris-lightitalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Neris';
+    src: url('neris-semibolditalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Neris';
+    src: url('neris-bolditalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Neris';
+    src: url('neris-blackitalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+}
